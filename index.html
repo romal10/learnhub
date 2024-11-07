@@ -58,11 +58,44 @@
       <!-- Main app content here -->
     </div>
 
+    <!-- Google Login Button in HTML -->
+<div id="googleSignInButton"></div>
+
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<script>
+  function handleCredentialResponse(response) {
+    // Send response.credential to your backend to verify and authenticate user
+    fetch('/auth/google/callback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token: response.credential })
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log(data); // Redirect or handle authenticated user
+    });
+  }
+
+  window.onload = () => {
+    google.accounts.id.initialize({
+      client_id: "YOUR_GOOGLE_CLIENT_ID",
+      callback: handleCredentialResponse
+    });
+    google.accounts.id.renderButton(
+      document.getElementById("googleSignInButton"),
+      { theme: "outline", size: "large" } // Customize button style
+    );
+  };
+</script>
+
+
     <!-- Upload Modal -->
     <div class="modal-overlay" id="uploadModal">
       <!-- Upload modal content here -->
     </div>
   </div>
   <script src="js/scripts.js"></script>
+  <script src="js/login-b.js"></script>
+  <script src="js/login-f.js"></script>
 </body>
 </html>
