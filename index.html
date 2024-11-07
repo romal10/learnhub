@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VideoHub Learning Platform</title>
+  <base href="/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://apis.google.com/js/api.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://unpkg.com/jwt-decode@3.1.2/build/jwt-decode.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Landing Page -->
+    <div id="landingPage" class="landing-container">
+      <div class="search-hero">
+        <h1>VideoHub Learning Platform</h1>
+        <div class="search-container">
+          <input type="search" class="search-input" placeholder="Search videos...">
+          <button class="search-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 18a7 7 0 100-14 7 7 0 000 14zm6.364-5.636a9 9 0 111.415-1.415l3.728 3.728-1.415 1.414-3.728-3.728z" /></svg>
+          </button>
+        </div>
+        <div class="auth-actions">
+          <button class="auth-btn" onclick="showLoginPage()">Login</button>
+          <button class="auth-btn primary" onclick="showRegisterPage()">Register</button>
+        </div>
+        <div id="g_id_onload"
+             data-client_id="YOUR_ACTUAL_GOOGLE_CLIENT_ID"
+             data-callback="handleGoogleSignIn"
+             data-context="signin"
+             data-ux_mode="popup"
+             data-auto_prompt="false">
+        </div>
+        <div class="g_id_signin"
+             data-type="standard"
+             data-size="large"
+             data-theme="outline"
+             data-text="sign_in_with"
+             data-shape="rectangular"
+             data-logo_alignment="left">
+        </div>
+      </div>
+    </div>
+
+    <!-- Login Page -->
+    <div id="loginPage" class="login-container" style="display: none;">
+      <!-- Rest of the login/register forms -->
+    </div>
+
+    <!-- Main App -->
+    <div id="mainApp" style="display: none;">
+      <!-- Main app content here -->
+    </div>
+
+    <!-- Upload Modal -->
+    <div class="modal-overlay" id="uploadModal">
+      <!-- Upload modal content here -->
+    </div>
+  </div>
+  <script src="js/scripts.js"></script>
+</body>
+</html>

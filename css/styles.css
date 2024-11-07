@@ -1,0 +1,62 @@
+:root {
+    --primary: #d6249f;
+    --primary-gradient: linear-gradient(45deg, #d6249f, #285AEB);
+    --background: #1a1a1a;
+    --text: #ffffff;
+    --dark-accent: #2d2d2d;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--background);
+    color: var(--text);
+  }
+  
+  .landing-container {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+                url('https://images.unsplash.com/photo-1516534775068-ba3e7458af70') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .search-hero {
+    max-width: 800px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .search-hero h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .search-container {
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+  }
+  
+  /* Remaining CSS styles here... */
+  
