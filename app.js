@@ -1,44 +1,42 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const session = require('express-session');
-const bodyParser = require('body-parser');
 const path = require('path');
+const app = express();
+const mongoose = require('mongoose');
+
+// Import routes
 const authRoutes = require('./routes/authRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const videoRoutes = require('./routes/videoRoutes');
 
-const app = express();
-
-// Connect to MongoDB
+// Setup mongoose connection (update this URL)
 mongoose.connect('mongodb://localhost/learnhub', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-})
-  .then(() => console.log('MongoDB connected'))
-  .catch((err) => console.log(err));
+});
 
-// Set up middlewares
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({
-  secret: 'secret_key',  // Use a secret key for the session
-  resave: false,
-  saveUninitialized: true,
-}));
+app.set('view engine', 'ejs');  // Use EJS as the templating engine
+app.set('views', path.join(__dirname, 'views'));  // Views folder path
 
-// Set EJS as templating engine
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-
-// Serve static files (CSS, JS)
+// Static files (CSS, JS, images)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes
-app.use(authRoutes);
-app.use(adminRoutes);
-app.use(videoRoutes);
+// Middleware to parse incoming data (for forms)
+app.use(express.urlencoded({ extended: true }));
 
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+// Use routes
+app.use('/', authRoutes);
+app.use('/admin', adminRoutes);
+app.use('/videos', videoRoutes);
+
+// Default route (landing page)
+app.get('/', (req, res) => {
+  res.render('index', {
+    title: 'Learnhub',
+    searchPlaceholder: 'Search for lecturers or courses...',
+  });
+});
+
+// Listen on port 3000
+app.listen(3000, () => {
+  console.log('Server running on http://localhost:3000');
 });

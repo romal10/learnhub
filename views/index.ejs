@@ -3,18 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LearnHub</title>
+  <title><%= title %></title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-  <header>
-    <h1>Welcome to LearnHub</h1>
-  </header>
 
-  <div class="content">
-    <h2>Explore Video Tutorials</h2>
-    <button id="loadVideos">Load Videos</button>
-  </div>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <h1><%= title %></h1>
+    </div>
+    <div class="menu">
+      <a href="/login">Login</a>
+      <a href="/register">Register</a>
+      <a href="/profile">Profile</a>
+    </div>
+  </nav>
+
+  <!-- Search Section -->
+  <section class="search-container">
+    <input type="text" id="search" placeholder="<%= searchPlaceholder %>" />
+    <button id="search-btn">Search</button>
+  </section>
+
+  <!-- Featured Lecturers (Dummy Data) -->
+  <section class="lecturer-list">
+    <h2>Featured Lecturers</h2>
+    <div class="lecturer-card">
+      <img src="/images/lecturer1.jpg" alt="Lecturer" />
+      <div class="lecturer-info">
+        <h3>Dr. John Doe</h3>
+        <p>Course: Web Development Mastery</p>
+        <button>View Courses</button>
+      </div>
+    </div>
+    <div class="lecturer-card">
+      <img src="/images/lecturer2.jpg" alt="Lecturer" />
+      <div class="lecturer-info">
+        <h3>Prof. Jane Smith</h3>
+        <p>Course: Data Science and AI</p>
+        <button>View Courses</button>
+      </div>
+    </div>
+  </section>
 
   <script src="/js/script.js"></script>
 </body>

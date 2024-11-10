@@ -1,8 +1,6 @@
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('JavaScript Loaded');
-    const button = document.getElementById('loadVideos');
-    button.addEventListener('click', () => {
-      alert('Videos will be loaded here!');
-    });
-  });
-  
+document.getElementById('search-btn').addEventListener('click', function() {
+  const searchQuery = document.getElementById('search').value;
+  if (searchQuery) {
+    window.location.href = `/search?query=${searchQuery}`;
+  }
+});

@@ -1,97 +1,86 @@
-/* public/css/styles.css */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #d400ff, #00b8ff); /* Dark pink to blue gradient */
+  color: #fff;
+}
 
-/* Reset some default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-  }
-  
-  header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .content {
-    margin: 20px;
-  }
-  
-  button {
-    padding: 10px 15px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+}
 
-  /* public/css/styles.css */
+.navbar .logo h1 {
+  margin: 0;
+  font-size: 2rem;
+}
 
-.login-container {
-    width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .login-container h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
-  .google-login {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  a {
-    color: #4CAF50;
-  }
-  
+.navbar .menu a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+#search {
+  padding: 10px;
+  font-size: 1.2rem;
+  width: 300px;
+  margin-right: 10px;
+}
+
+#search-btn {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background: #ff007f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.lecturer-list {
+  margin: 40px auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.lecturer-card {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.lecturer-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.lecturer-info h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #00b8ff;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
