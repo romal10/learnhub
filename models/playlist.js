@@ -1,34 +1,12 @@
-// models/playlist.js
-
 const mongoose = require('mongoose');
 
-// Define the Playlist Schema
+// Define the Playlist schema
 const playlistSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  description: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  videos: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Video' // Reference to the Video model
-  }],
-  createdAt: {
-    type: Date,
-    default: Date.now
-  },
-  updatedAt: {
-    type: Date,
-    default: Date.now
-  }
+  name: { type: String, required: true },
+  description: { type: String },
+  videos: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Video' }],
 });
 
-// Create the Playlist model from the schema
 const Playlist = mongoose.model('Playlist', playlistSchema);
 
 module.exports = Playlist;

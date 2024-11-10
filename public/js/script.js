@@ -1,6 +1,8 @@
-// public/js/script.js
-
-document.getElementById('loadVideos').addEventListener('click', function() {
-    alert('Videos will be loaded here.');
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('JavaScript Loaded');
+    const button = document.getElementById('loadVideos');
+    button.addEventListener('click', () => {
+      alert('Videos will be loaded here!');
+    });
   });
   
