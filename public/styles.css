@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    background-color: #3b5998;
+    color: white;
+}
+
+button:hover {
+    background-color: #2d4373;
+}
